@@ -1,5 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import pujaData from "./data/pujaData";
+
+
+const pujaParticles = [
+  "🌸", "✿", "🌺", "🪷", "🪔", "🌸", "✦", "🌺",
+  "🪔", "✿", "🌸", "🪷", "🌺", "✦", "🪔", "🌸",
+  "✿", "🌺", "🪔", "🌸", "🪷", "✦"
+];
 
 function App() {
   const targetDate = new Date("2026-10-10T00:00:00");
@@ -36,6 +43,20 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isLoading, setIsLoading] = useState(true);
+  const dhakAudioRef = useRef(null);
+
+  const playDhak = () => {
+    const audio = dhakAudioRef.current;
+
+    if (!audio) return;
+
+    audio.currentTime = 0;
+    audio.volume = 0.65;
+
+    audio.play().catch(() => {
+      // Browser audio requires a user gesture.
+    });
+  };
 
   useEffect(() => {
     const loadingTimer = setTimeout(() => {
@@ -140,6 +161,24 @@ function App() {
       )}
 
       <main className="home">
+
+      <div className="puja-rain" aria-hidden="true">
+        {pujaParticles.map((particle, index) => (
+          <span
+            className="puja-particle"
+            key={`${particle}-${index}`}
+            style={{
+              "--fall-left": `${(index * 17 + 4) % 96}%`,
+              "--fall-delay": `${(index % 8) * -1.1}s`,
+              "--fall-duration": `${8 + (index % 5)}s`,
+              "--fall-size": `${12 + (index % 4) * 3}px`,
+              "--fall-drift": `${index % 2 === 0 ? 1 : -1}`,
+            }}
+          >
+            {particle}
+          </span>
+        ))}
+      </div>
 
       <div className="puja-float puja-float-one" aria-hidden="true">✦</div>
       <div className="puja-float puja-float-two" aria-hidden="true">🪔</div>
@@ -287,6 +326,21 @@ function App() {
           <button className="reminder">
             🔔 পুজোর কথা মনে করিয়ে দিন
           </button>
+
+          <button
+            className="dhak-button"
+            onClick={playDhak}
+            aria-label="ঢাকের শব্দ শুনুন"
+            title="ঢাক বাজান"
+          >
+            🥁 <span>ঢাক বাজুক</span>
+          </button>
+
+          <audio
+            ref={dhakAudioRef}
+            src="/audio/dhak.mp3"
+            preload="auto"
+          />
 
         </div>
 

@@ -2734,3 +2734,123 @@ footer p {
     transform: none;
   }
 }
+
+
+/* =========================================================
+   PUJA RAIN — FLOWERS + DIYA
+========================================================= */
+
+.puja-rain {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.puja-particle {
+  position: absolute;
+  top: -12vh;
+  left: var(--fall-left);
+  font-size: var(--fall-size);
+  opacity: 0;
+  filter: drop-shadow(0 0 5px rgba(217, 164, 65, 0.16));
+  animation:
+    pujaFall var(--fall-duration) linear var(--fall-delay) infinite,
+    pujaSway 2.8s ease-in-out var(--fall-delay) infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes pujaFall {
+  0% {
+    transform: translate3d(0, -12vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.55;
+  }
+  72% {
+    opacity: 0.34;
+  }
+  100% {
+    transform: translate3d(calc(var(--fall-drift) * 80px), 112vh, 0) rotate(280deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pujaSway {
+  from {
+    margin-left: -10px;
+  }
+  to {
+    margin-left: 10px;
+  }
+}
+
+/* =========================================================
+   DHAK SOUND BUTTON
+========================================================= */
+
+.dhak-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 10px 18px;
+  border: 1px solid rgba(217, 164, 65, 0.32);
+  border-radius: 999px;
+  background: rgba(20, 3, 5, 0.48);
+  color: #e8c878;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.dhak-button:hover {
+  transform: translateY(-2px);
+  background: rgba(217, 164, 65, 0.09);
+  border-color: rgba(217, 164, 65, 0.6);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22);
+}
+
+.dhak-button:active {
+  transform: scale(0.97);
+}
+
+.dhak-button span {
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .puja-rain {
+    opacity: 0.72;
+  }
+
+  .puja-particle:nth-child(n + 12) {
+    display: none;
+  }
+
+  .dhak-button {
+    padding: 9px 15px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .puja-particle {
+    animation: none;
+    display: none;
+  }
+
+  .dhak-button {
+    transition: none;
+  }
+}
