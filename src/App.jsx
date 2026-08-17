@@ -559,13 +559,34 @@ function FestivalCard({
 }) {
 
   const [flipped, setFlipped] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleCardClick = () => {
+    if (isAnimating) return;
+
+    setIsAnimating(true);
+    setFlipped((current) => !current);
+
+    window.setTimeout(() => {
+      setIsAnimating(false);
+    }, 780);
+  };
 
   return (
     <div
       className={`festival-card-wrapper ${
         flipped ? "is-flipped" : ""
-      }`}
-      onClick={() => setFlipped(!flipped)}
+      } ${isAnimating ? "is-animating" : ""}`}
+      onClick={handleCardClick}
+      role="button"
+      tabIndex={0}
+      aria-label={`${title} বিস্তারিত দেখুন`}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          handleCardClick();
+        }
+      }}
     >
 
       <div className="festival-card-inner">
