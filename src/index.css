@@ -1,0 +1,2736 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Serif Bengali", serif;
+  background: #160407;
+  color: #fff4dc;
+}
+
+button,
+a {
+  font-family: inherit;
+}
+
+.home {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 80% 25%,
+      rgba(163, 77, 24, 0.25),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 15% 70%,
+      rgba(115, 20, 30, 0.25),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #120305,
+      #2a080b,
+      #100204
+    );
+}
+
+
+/* NAVBAR */
+
+.navbar {
+  height: 78px;
+  padding: 0 6%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(15, 2, 4, 0.75);
+  border-bottom: 1px solid rgba(217, 164, 65, 0.25);
+
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-symbol {
+  width: 43px;
+  height: 43px;
+
+  border: 1px solid #d9a441;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  color: #f3c75f;
+  font-size: 22px;
+
+  box-shadow: 0 0 25px rgba(217, 164, 65, 0.18);
+}
+
+.logo h2 {
+  font-size: 20px;
+  color: #f3d27a;
+}
+
+.logo p {
+  font-size: 10px;
+  color: #aa9c8a;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  color: #d4c6b4;
+  text-decoration: none;
+  font-size: 14px;
+
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f3c75f;
+}
+
+.location {
+  border: 1px solid rgba(217, 164, 65, 0.5);
+
+  background: rgba(217, 164, 65, 0.05);
+
+  color: #f3d27a;
+
+  border-radius: 30px;
+
+  padding: 10px 17px;
+
+  cursor: pointer;
+}
+
+
+/* HERO */
+
+.hero {
+  min-height: calc(100vh - 78px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 80px 20px;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(18, 3, 5, 0.90) 0%,
+      rgba(18, 3, 5, 0.60) 45%,
+      rgba(18, 3, 5, 0.15) 100%
+    ),
+    url("/images/durga-hero.png") center center / cover no-repeat;
+}
+@media (max-width: 600px) {
+  .hero {
+    min-height: 760px;
+
+    background-position: 68% center;
+  }
+}
+
+/* glowing background */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(177, 57, 26, 0.35),
+      transparent 65%
+    );
+
+  right: -150px;
+  top: -100px;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(190, 137, 40, 0.12),
+      transparent 65%
+    );
+
+  left: -200px;
+  bottom: -200px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1000px;
+}
+
+.festival-year {
+  color: #e5bd68;
+
+  font-size: 15px;
+
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  margin-top: 20px;
+
+  font-size: clamp(60px, 9vw, 115px);
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  color: #fff5df;
+
+  text-shadow:
+    0 0 40px rgba(243, 210, 122, 0.1);
+}
+
+.hero h1 span {
+  color: #e5af48;
+}
+
+.subtitle {
+  margin-top: 20px;
+
+  color: #c6b7a2;
+
+  font-size: 22px;
+}
+
+.gold-line {
+  margin: 30px auto;
+
+  color: #d9a441;
+
+  font-size: 17px;
+
+  opacity: 0.8;
+}
+
+.countdown-title {
+  color: #f0ce7a;
+
+  font-size: 23px;
+
+  margin-bottom: 18px;
+}
+
+
+/* COUNTDOWN */
+
+.countdown {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.time-box {
+  width: 145px;
+
+  padding: 22px 10px;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(217, 164, 65, 0.55);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(70, 17, 18, 0.85),
+      rgba(20, 3, 5, 0.9)
+    );
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.3),
+    inset 0 0 25px rgba(217, 164, 65, 0.04);
+}
+
+.time-box strong {
+  display: block;
+
+  font-family: Georgia, serif;
+
+  font-size: 52px;
+
+  color: #f3c75f;
+}
+
+.time-box span {
+  color: #c8b9a6;
+
+  font-size: 14px;
+}
+
+.separator {
+  color: #d9a441;
+
+  font-size: 40px;
+}
+
+.reminder {
+  margin-top: 35px;
+
+  padding: 13px 25px;
+
+  border: 1px solid #d9a441;
+
+  border-radius: 30px;
+
+  background: transparent;
+
+  color: #f3d27a;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  transition: 0.3s;
+}
+
+.reminder:hover {
+  background: #d9a441;
+
+  color: #250507;
+
+  box-shadow:
+    0 0 30px rgba(217, 164, 65, 0.25);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .location {
+    display: none;
+  }
+
+  .hero {
+    min-height: calc(100vh - 70px);
+  }
+
+  .festival-year {
+    font-size: 11px;
+
+    letter-spacing: 1px;
+  }
+
+  .subtitle {
+    font-size: 17px;
+  }
+
+  .countdown {
+    gap: 5px;
+  }
+
+  .time-box {
+    width: 75px;
+
+    padding: 15px 5px;
+  }
+
+  .time-box strong {
+    font-size: 30px;
+  }
+
+  .time-box span {
+    font-size: 10px;
+  }
+
+  .separator {
+    font-size: 22px;
+  }
+
+  .countdown-title {
+    font-size: 18px;
+  }
+}
+/* ================================
+   ABOUT SECTION
+================================ */
+
+.about-section {
+  padding: 130px 20px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(133, 37, 25, 0.2),
+      transparent 55%
+    );
+}
+
+.about-content {
+  max-width: 760px;
+  margin: auto;
+}
+
+.small-title {
+  color: #d9a441;
+  font-size: 15px;
+}
+
+.about-content h2 {
+  margin-top: 22px;
+
+  font-size: clamp(35px, 5vw, 60px);
+
+  line-height: 1.3;
+
+  color: #fff1d0;
+}
+
+.about-content h2 span {
+  color: #d9a441;
+}
+
+.about-content p {
+  margin-top: 25px;
+
+  color: #b0a18f;
+
+  font-size: 16px;
+
+  line-height: 2;
+}
+
+
+/* ================================
+   GALLERY
+================================ */
+
+.gallery-section {
+  padding: 110px 6%;
+}
+
+.gallery-grid {
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1.3fr 1fr 1fr;
+
+  gap: 18px;
+}
+
+.gallery-card {
+  min-height: 300px;
+
+  border-radius: 22px;
+
+  border: 1px solid
+    rgba(217, 164, 65, 0.3);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  align-items: flex-start;
+
+  padding: 28px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #53151a,
+      #1d0508
+    );
+
+  transition: 0.4s;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #d9a441;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.gallery-card span {
+  font-size: 45px;
+
+  margin-bottom: 15px;
+}
+
+.gallery-card h3 {
+  color: #f3d27a;
+
+  font-size: 24px;
+}
+
+.gallery-one {
+  min-height: 400px;
+}
+
+.gallery-two {
+  background:
+    linear-gradient(
+      145deg,
+      #451013,
+      #160305
+    );
+}
+
+.gallery-three {
+  background:
+    linear-gradient(
+      145deg,
+      #6b1d18,
+      #1b0507
+    );
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  padding: 55px 20px;
+
+  text-align: center;
+
+  border-top: 1px solid
+    rgba(217, 164, 65, 0.2);
+
+  background: #100204;
+}
+
+.footer-logo {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.footer-symbol {
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #d9a441;
+
+  border-radius: 50%;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #f3d27a;
+
+  font-size: 20px;
+}
+
+.footer-logo strong {
+  display: block;
+
+  color: #f3d27a;
+
+  font-size: 20px;
+}
+
+.footer-logo small {
+  display: block;
+
+  color: #8e8072;
+
+  font-size: 10px;
+}
+
+footer p {
+  color: #d9a441;
+
+  margin-bottom: 15px;
+}
+
+.copyright {
+  color: #6f6257;
+
+  font-size: 11px;
+}
+
+
+/* ================================
+   MOBILE GALLERY
+================================ */
+
+@media (max-width: 700px) {
+
+  .gallery-section {
+    padding: 80px 20px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card,
+  .gallery-one {
+    min-height: 240px;
+  }
+
+  .about-section {
+    padding: 90px 20px;
+  }
+
+}
+/* =================================
+   PUJA CALENDAR SECTION
+================================= */
+
+.calendar-section {
+  padding: 110px 6%;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20, 3, 5, 0),
+      rgba(70, 12, 15, 0.35)
+    );
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.section-heading > span {
+  display: block;
+  color: #d9a441;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.section-heading h2 {
+  color: #f3d27a;
+  font-size: clamp(36px, 5vw, 58px);
+  margin: 0;
+}
+
+.section-heading p {
+  color: #aa9b8a;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+
+/* CARD GRID */
+
+.festival-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* CARD */
+
+.festival-card {
+  min-height: 270px;
+
+  padding: 28px 18px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  text-align: center;
+
+  border: 1px solid rgba(217, 164, 65, 0.3);
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(67, 16, 19, 0.9),
+      rgba(21, 4, 6, 0.95)
+    );
+
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.festival-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  background: rgba(217, 164, 65, 0.08);
+
+  filter: blur(25px);
+
+  top: -50px;
+  right: -40px;
+
+  pointer-events: none;
+}
+
+
+.festival-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #d9a441;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(217, 164, 65, 0.1);
+}
+
+
+.festival-card.featured {
+  border-color: #d9a441;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(100, 28, 24, 0.95),
+      rgba(30, 5, 7, 0.95)
+    );
+
+  box-shadow:
+    0 0 30px rgba(217, 164, 65, 0.08);
+}
+
+
+/* ICON */
+
+.festival-icon {
+  font-size: 42px;
+
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 18px;
+}
+
+
+/* TITLE */
+
+.festival-card h3 {
+  margin: 0;
+
+  color: #f5d47e;
+
+  font-size: 24px;
+
+  font-weight: 700;
+}
+
+
+/* DATE */
+
+.festival-date {
+  margin-top: 10px;
+
+  color: #e0b65a;
+
+  font-size: 14px;
+}
+
+
+/* DESCRIPTION */
+
+.festival-card p {
+  margin-top: 12px;
+
+  color: #aa9b8a;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* GOLD LINE */
+
+.card-line {
+  width: 45px;
+  height: 1px;
+
+  background: #d9a441;
+
+  margin-top: 22px;
+
+  opacity: 0.6;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1100px) {
+
+  .festival-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .calendar-section {
+    padding: 80px 18px;
+  }
+
+  .festival-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .festival-card {
+    min-height: 225px;
+    padding: 22px 10px;
+  }
+
+  .festival-icon {
+    font-size: 34px;
+    height: 45px;
+  }
+
+  .festival-card h3 {
+    font-size: 19px;
+  }
+
+  .festival-date {
+    font-size: 12px;
+  }
+
+  .festival-card p {
+    font-size: 11px;
+  }
+
+}
+/* =================================
+   PUJOR KOTHA
+================================= */
+
+.about-section {
+  min-height: 620px;
+
+  padding: 130px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(145, 52, 30, 0.22),
+      transparent 55%
+    ),
+    linear-gradient(
+      180deg,
+      #25070a,
+      #140305
+    );
+}
+
+
+/* subtle golden glow */
+
+.about-glow {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(217, 164, 65, 0.12),
+      transparent 65%
+    );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+
+/* content */
+
+.about-content {
+  max-width: 820px;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+/* small heading */
+
+.about-label {
+  color: #d9a441;
+
+  font-size: 14px;
+
+  letter-spacing: 3px;
+}
+
+
+/* main heading */
+
+.about-content h2 {
+  margin-top: 25px;
+
+  font-size: clamp(42px, 6vw, 72px);
+
+  line-height: 1.3;
+
+  font-weight: 700;
+
+  color: #fff2d2;
+}
+
+.about-content h2 span {
+  color: #e1ae4d;
+}
+
+
+/* divider */
+
+.about-divider {
+  width: 220px;
+
+  margin: 30px auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  color: #d9a441;
+}
+
+.about-divider::before,
+.about-divider::after {
+  content: "";
+
+  height: 1px;
+
+  flex: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #d9a441
+    );
+}
+
+.about-divider::after {
+  background:
+    linear-gradient(
+      90deg,
+      #d9a441,
+      transparent
+    );
+}
+
+
+/* quote */
+
+.about-quote {
+  max-width: 650px;
+
+  margin: auto;
+
+  color: #e3c98e;
+
+  font-size: 21px;
+
+  line-height: 2;
+
+  font-style: italic;
+}
+
+
+/* description */
+
+.about-text {
+  max-width: 650px;
+
+  margin: 25px auto 0;
+
+  color: #a99b8a;
+
+  font-size: 15px;
+
+  line-height: 2;
+}
+
+
+/* final line */
+
+.about-content h3 {
+  margin-top: 30px;
+
+  color: #f3d27a;
+
+  font-size: 27px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .about-section {
+    min-height: 600px;
+
+    padding: 90px 20px;
+  }
+
+  .about-label {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+  .about-content h2 {
+    font-size: 40px;
+  }
+
+  .about-quote {
+    font-size: 17px;
+
+    line-height: 1.9;
+  }
+
+  .about-text {
+    font-size: 13px;
+
+    line-height: 1.9;
+  }
+
+  .about-content h3 {
+    font-size: 23px;
+  }
+
+}
+/* =================================
+   3D FLIP FESTIVAL CARD
+================================= */
+
+.festival-card-wrapper {
+  height: 390px;
+  width: 100%;
+  min-width: 0;
+  perspective: 1400px;
+  cursor: pointer;
+}
+
+.festival-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.festival-card-wrapper.is-flipped .festival-card-inner {
+  transform: rotateY(180deg);
+}
+
+
+/* =================================
+   BOTH SIDES
+================================= */
+
+.festival-card-front,
+.festival-card-back {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+
+/* =================================
+   FRONT
+================================= */
+
+.festival-card-front {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  text-align: center;
+
+  padding: 32px 18px;
+}
+
+
+/* =================================
+   BACK
+================================= */
+
+.festival-card-back {
+  transform: rotateY(180deg);
+
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 28px 20px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(217, 164, 65, 0.14),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      #55151a,
+      #1b0407
+    );
+}
+
+
+/* =================================
+   BACK ICON
+================================= */
+
+.back-icon {
+  font-size: 32px;
+  line-height: 1;
+
+  margin-bottom: 7px;
+}
+
+
+/* =================================
+   BACK TITLE
+================================= */
+
+.festival-card-back h3 {
+  color: #f5d47e;
+
+  font-size: 23px;
+  font-weight: 700;
+
+  margin: 0;
+}
+
+
+/* =================================
+   BACK DATE
+================================= */
+
+.back-date {
+  color: #d9a441;
+
+  font-size: 12px;
+
+  margin-top: 6px;
+}
+
+
+/* =================================
+   DETAILS TITLE
+================================= */
+
+.details-title {
+  width: 100%;
+
+  color: #f3d27a;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  margin-top: 14px;
+  margin-bottom: 7px;
+}
+
+
+/* =================================
+   SPECIAL LIST
+================================= */
+
+.festival-card-back ul {
+  width: 100%;
+
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+}
+
+.festival-card-back li {
+  color: #d1c0aa;
+
+  font-size: 11px;
+  line-height: 1.65;
+
+  margin: 2px 0;
+}
+
+.festival-card-back li::before {
+  content: "✦ ";
+
+  color: #d9a441;
+}
+
+
+/* =================================
+   SCHEDULE
+================================= */
+
+.schedule-label {
+  width: 100%;
+
+  margin-top: 12px;
+
+  color: #e0b65a;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.schedule-time {
+  width: 100%;
+
+  margin-top: 6px;
+
+  padding: 9px 10px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(217, 164, 65, 0.30);
+
+  border-radius: 12px;
+
+  background: rgba(217, 164, 65, 0.06);
+
+  color: #f0d18a;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+.schedule-note {
+  width: 100%;
+
+  margin-top: 6px;
+
+  color: #948576;
+
+  font-size: 9px;
+
+  line-height: 1.45;
+}
+
+
+/* =================================
+   OLD TIME BOX SUPPORT
+================================= */
+
+.puja-time {
+  width: 100%;
+
+  margin-top: 10px;
+
+  padding: 9px 10px;
+
+  box-sizing: border-box;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(217, 164, 65, 0.25);
+
+  background: rgba(217, 164, 65, 0.05);
+
+  color: #c9bba8;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+.puja-time span {
+  color: #e0b65a;
+
+  margin-right: 5px;
+}
+
+
+/* =================================
+   CLICK HINT
+================================= */
+
+.flip-hint {
+  margin-top: auto;
+
+  color: #8b7968;
+
+  font-size: 9px;
+
+  letter-spacing: 0.4px;
+}
+
+.festival-card-back .flip-hint {
+  margin-top: 8px;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1100px) {
+
+  .festival-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .festival-card-wrapper {
+    height: 380px;
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .festival-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .festival-card-wrapper {
+    height: 330px;
+  }
+
+  .festival-card-front {
+    padding: 22px 10px;
+  }
+
+  .festival-card-back {
+    padding: 20px 10px;
+  }
+
+  .back-icon {
+    font-size: 26px;
+  }
+
+  .festival-card-back h3 {
+    font-size: 19px;
+  }
+
+  .back-date {
+    font-size: 10px;
+  }
+
+  .details-title {
+    font-size: 11px;
+    margin-top: 10px;
+  }
+
+  .festival-card-back li {
+    font-size: 9px;
+    line-height: 1.55;
+  }
+
+  .schedule-label {
+    font-size: 9px;
+  }
+
+  .schedule-time {
+    font-size: 8px;
+    padding: 7px 6px;
+  }
+
+  .schedule-note {
+    font-size: 8px;
+  }
+
+  .puja-time {
+    font-size: 8px;
+  }
+
+}
+
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 420px) {
+
+  .festival-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .festival-card-wrapper {
+    height: 350px;
+  }
+
+}
+/* =================================
+   PREMIUM GALLERY
+================================= */
+
+.gallery-section {
+  padding: 120px 6% 130px;
+
+  position: relative;
+
+  background:
+    linear-gradient(
+      180deg,
+      #140305,
+      #1b0507
+    );
+}
+
+
+.gallery-grid {
+  max-width: 1200px;
+
+  margin: 55px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    1.4fr 0.8fr 0.8fr;
+
+  grid-template-rows:
+    260px 260px;
+
+  gap: 18px;
+}
+
+
+/* COMMON CARD */
+
+.gallery-card {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  border: 1px solid
+    rgba(217, 164, 65, 0.25);
+
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(217, 164, 65, 0.18),
+      transparent 40%
+    ),
+    linear-gradient(
+      145deg,
+      #681a1c,
+      #1b0407
+    );
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+
+  min-height: 0;
+}
+
+
+.gallery-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #d9a441;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(217, 164, 65, 0.08);
+}
+
+
+/* MAIN CARD */
+
+.gallery-main {
+  grid-row: span 2;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(218, 165, 65, 0.22),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #721c20,
+      #230507
+    );
+}
+
+
+/* OTHER CARDS */
+
+.gallery-light {
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(255, 201, 87, 0.2),
+      transparent 40%
+    ),
+    linear-gradient(
+      145deg,
+      #5a171a,
+      #180406
+    );
+}
+
+
+.gallery-dhak {
+  background:
+    radial-gradient(
+      circle at 40% 30%,
+      rgba(180, 73, 47, 0.25),
+      transparent 45%
+    ),
+    linear-gradient(
+      145deg,
+      #4d1217,
+      #150305
+    );
+}
+
+
+.gallery-ananda {
+  grid-column: span 2;
+
+  background:
+    radial-gradient(
+      circle at 60% 20%,
+      rgba(217, 164, 65, 0.15),
+      transparent 40%
+    ),
+    linear-gradient(
+      145deg,
+      #681a1c,
+      #210507
+    );
+}
+
+
+/* DECORATIVE GLOW */
+
+.gallery-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(217, 164, 65, 0.08);
+
+  filter: blur(30px);
+
+  top: -70px;
+  right: -60px;
+
+  transition: 0.5s;
+}
+
+
+.gallery-card:hover::before {
+  transform: scale(1.4);
+}
+
+
+/* CONTENT */
+
+.gallery-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  padding: 28px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  align-items: flex-start;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 45%,
+      rgba(10, 1, 3, 0.85)
+    );
+}
+
+
+.gallery-overlay span {
+  font-size: 42px;
+
+  margin-bottom: 10px;
+}
+
+
+.gallery-overlay h3 {
+  margin: 0;
+
+  color: #f3d27a;
+
+  font-size: 24px;
+}
+
+
+.gallery-overlay p {
+  margin: 7px 0 0;
+
+  color: #c2b29e;
+
+  font-size: 13px;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 700px) {
+
+  .gallery-section {
+    padding: 90px 20px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows:
+      260px
+      200px
+      200px;
+
+    gap: 12px;
+  }
+
+  .gallery-main {
+    grid-column: span 2;
+
+    grid-row: span 1;
+  }
+
+  .gallery-ananda {
+    grid-column: span 2;
+  }
+
+  .gallery-overlay {
+    padding: 20px;
+  }
+
+  .gallery-overlay span {
+    font-size: 32px;
+  }
+
+  .gallery-overlay h3 {
+    font-size: 19px;
+  }
+
+  .gallery-overlay p {
+    font-size: 11px;
+  }
+
+}
+/* =================================
+   JANE KI - PUJA FACTS
+================================= */
+
+.facts-section {
+  padding: 110px 6% 130px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(217, 164, 65, 0.08),
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      #170305,
+      #250608
+    );
+}
+
+
+/* GRID */
+
+.facts-grid {
+  max-width: 1200px;
+
+  margin: 55px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* CARD */
+
+.fact-card {
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid
+    rgba(217, 164, 65, 0.25);
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(94, 22, 27, 0.9),
+      rgba(25, 4, 7, 0.96)
+    );
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.2);
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.fact-card:hover {
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(217, 164, 65, 0.55);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+/* TOP */
+
+.fact-card-top {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 25px 25px 15px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: inherit;
+
+  cursor: pointer;
+
+  text-align: left;
+}
+
+
+.fact-icon {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background:
+    rgba(217, 164, 65, 0.09);
+
+  border: 1px solid
+    rgba(217, 164, 65, 0.25);
+
+  font-size: 30px;
+}
+
+
+.fact-title-area {
+  flex: 1;
+}
+
+
+.fact-title-area span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #c89a42;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+.fact-title-area h3 {
+  margin: 0;
+
+  color: #f2cf75;
+
+  font-size: 25px;
+}
+
+
+.fact-arrow {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(217, 164, 65, 0.35);
+
+  color: #e2b653;
+
+  font-size: 20px;
+}
+
+
+/* SHORT TEXT */
+
+.fact-short {
+  padding: 0 25px 20px;
+
+  color: #b9a896;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* DETAILS */
+
+.fact-details {
+  margin: 0 25px;
+
+  padding: 18px 0;
+
+  border-top:
+    1px solid rgba(217, 164, 65, 0.18);
+
+  animation:
+    factOpen 0.35s ease;
+}
+
+
+@keyframes factOpen {
+
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+.fact-details p {
+  display: flex;
+
+  gap: 9px;
+
+  margin: 9px 0;
+
+  color: #c7b8a7;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+.fact-details p span {
+  color: #d9a441;
+
+  flex-shrink: 0;
+}
+
+
+/* =================================
+   NAVAPATRIKA
+================================= */
+
+.plants-box {
+  margin-top: 20px;
+
+  padding: 18px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(217, 164, 65, 0.055);
+
+  border: 1px solid
+    rgba(217, 164, 65, 0.18);
+}
+
+
+.plants-box h4 {
+  margin: 0 0 15px;
+
+  color: #edc96e;
+
+  font-size: 15px;
+
+  text-align: center;
+}
+
+
+.plants-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 8px;
+}
+
+
+.plant-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  background:
+    rgba(0, 0, 0, 0.15);
+
+  border: 1px solid
+    rgba(217, 164, 65, 0.08);
+}
+
+
+.plant-number {
+  color: #d9a441;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+.plant-info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.plant-info strong {
+  color: #dfc898;
+
+  font-size: 11px;
+}
+
+
+.plant-info span {
+  color: #897969;
+
+  font-size: 9px;
+}
+
+
+/* MORE BUTTON */
+
+.fact-more {
+  width: 100%;
+
+  padding: 14px 20px;
+
+  border: 0;
+
+  border-top:
+    1px solid rgba(217, 164, 65, 0.13);
+
+  background:
+    rgba(217, 164, 65, 0.025);
+
+  color: #cfa650;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+
+.fact-more:hover {
+  background:
+    rgba(217, 164, 65, 0.08);
+
+  color: #f0cf79;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 700px) {
+
+  .facts-section {
+    padding: 80px 18px 90px;
+  }
+
+  .facts-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+    margin-top: 40px;
+  }
+
+  .fact-card-top {
+    padding: 20px 18px 12px;
+  }
+
+  .fact-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 14px;
+
+    font-size: 25px;
+  }
+
+  .fact-title-area h3 {
+    font-size: 20px;
+  }
+
+  .fact-short {
+    padding:
+      0 18px 18px;
+
+    font-size: 12px;
+  }
+
+  .fact-details {
+    margin: 0 18px;
+  }
+
+  .plants-list {
+    grid-template-columns: 1fr;
+  }
+
+}
+/* =================================
+   MOBILE NAVBAR
+================================= */
+
+.mobile-menu-btn {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid
+    rgba(217, 164, 65, 0.3);
+
+  border-radius: 12px;
+
+  background:
+    rgba(217, 164, 65, 0.06);
+
+  color: #e4bd67;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .navbar {
+    position: relative;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+  }
+
+  .nav-links {
+    position: absolute;
+
+    top: calc(100% + 10px);
+    left: 15px;
+    right: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    padding: 10px;
+
+    border-radius: 18px;
+
+    background:
+      rgba(27, 4, 7, 0.96);
+
+    border: 1px solid
+      rgba(217, 164, 65, 0.22);
+
+    box-shadow:
+      0 20px 50px
+      rgba(0, 0, 0, 0.45);
+
+    backdrop-filter: blur(20px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+      translateY(-10px)
+      scale(0.98);
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+
+    z-index: 1000;
+  }
+
+  .nav-links.mobile-open {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  .nav-links a {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    box-sizing: border-box;
+
+    border-radius: 12px;
+
+    text-align: left;
+  }
+
+  .nav-links a:hover {
+    background:
+      rgba(217, 164, 65, 0.08);
+  }
+
+}
+
+/* =========================================================
+   FINAL PREMIUM POLISH — MA ASCHHEN
+   Works with the current App.jsx classes
+========================================================= */
+
+/* ---------- GLASS NAVBAR ---------- */
+
+.navbar {
+  background: rgba(12, 2, 4, 0.58);
+  border-bottom: 1px solid rgba(217, 164, 65, 0.18);
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.18),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.025);
+
+  -webkit-backdrop-filter: blur(22px) saturate(125%);
+  backdrop-filter: blur(22px) saturate(125%);
+}
+
+.nav-links a {
+  position: relative;
+  padding: 6px 0;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  border-radius: 99px;
+  background: #d9a441;
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px rgba(217, 164, 65, 0.45);
+  transition: width 0.28s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 24px;
+}
+
+.nav-links a.active {
+  color: #f3d27a;
+  text-shadow: 0 0 16px rgba(217, 164, 65, 0.12);
+}
+
+
+/* ---------- LOADING SCREEN ---------- */
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(132, 35, 31, 0.30),
+      transparent 36%
+    ),
+    #100204;
+
+  color: #fff4dc;
+  overflow: hidden;
+
+  animation: loadingExit 0.65s ease 1.15s forwards;
+}
+
+.loading-screen::before,
+.loading-screen::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(217, 164, 65, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.loading-screen::before {
+  width: 360px;
+  height: 360px;
+  animation: loadingOrbit 8s linear infinite;
+}
+
+.loading-screen::after {
+  width: 520px;
+  height: 520px;
+  animation: loadingOrbit 12s linear infinite reverse;
+}
+
+.loading-mark {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+}
+
+.loading-symbol {
+  position: relative;
+  z-index: 2;
+
+  width: 60px;
+  height: 60px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #d9a441;
+  border-radius: 50%;
+
+  color: #f3d27a;
+  font-size: 29px;
+
+  background: rgba(217, 164, 65, 0.035);
+
+  box-shadow:
+    0 0 28px rgba(217, 164, 65, 0.14),
+    inset 0 0 18px rgba(217, 164, 65, 0.05);
+
+  animation: loadingPulse 1.8s ease-in-out infinite;
+}
+
+.loading-glow {
+  position: absolute;
+  inset: 0;
+
+  border-radius: 50%;
+  background: rgba(217, 164, 65, 0.09);
+  filter: blur(18px);
+
+  animation: loadingGlow 1.8s ease-in-out infinite;
+}
+
+.loading-screen h1 {
+  margin: 0;
+  color: #f3d27a;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.loading-screen p {
+  margin-top: 5px;
+  color: #a99581;
+  font-size: 12px;
+}
+
+.loading-line {
+  width: 110px;
+  height: 1px;
+  margin-top: 24px;
+  overflow: hidden;
+  background: rgba(217, 164, 65, 0.16);
+}
+
+.loading-line span {
+  display: block;
+  width: 38%;
+  height: 100%;
+  background: #d9a441;
+  box-shadow: 0 0 10px rgba(217, 164, 65, 0.5);
+  animation: loadingBar 1.05s ease-in-out infinite;
+}
+
+@keyframes loadingPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 25px rgba(217, 164, 65, 0.10);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 38px rgba(217, 164, 65, 0.24);
+  }
+}
+
+@keyframes loadingGlow {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+@keyframes loadingBar {
+  0% {
+    transform: translateX(-130%);
+  }
+  100% {
+    transform: translateX(330%);
+  }
+}
+
+@keyframes loadingOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loadingExit {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+
+/* ---------- PAGE ENTRY ---------- */
+
+.home {
+  animation: homeEnter 0.75s ease 0.08s both;
+}
+
+@keyframes homeEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* ---------- REAL SCROLL REVEAL ---------- */
+/* App.jsx adds .is-visible through IntersectionObserver. */
+
+.reveal-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.85s ease,
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+
+  /* Safety fallback: the page never remains blank. */
+  animation: revealSafety 0.7s ease 0.35s forwards;
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: none;
+}
+
+@keyframes revealSafety {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ---------- SUBTLE PUJA DECORATION ---------- */
+
+.puja-float,
+.puja-float-four,
+.puja-float-five {
+  position: fixed;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+
+  color: rgba(217, 164, 65, 0.20);
+
+  animation:
+    premiumFloat 6s ease-in-out infinite,
+    premiumTwinkle 3.5s ease-in-out infinite;
+}
+
+.puja-float-one {
+  top: 23%;
+  left: 2.5%;
+  font-size: 14px;
+}
+
+.puja-float-two {
+  top: 51%;
+  right: 2.5%;
+  font-size: 18px;
+  opacity: 0.18;
+  animation-delay: -2s;
+}
+
+.puja-float-three {
+  bottom: 17%;
+  left: 4%;
+  font-size: 11px;
+  animation-delay: -3.5s;
+}
+
+.puja-float-four {
+  top: 34%;
+  right: 6%;
+  font-size: 10px;
+  animation-delay: -1.5s;
+}
+
+.puja-float-five {
+  bottom: 30%;
+  right: 7%;
+  font-size: 12px;
+  animation-delay: -4s;
+}
+
+@keyframes premiumFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -11px, 0) rotate(7deg);
+  }
+}
+
+@keyframes premiumTwinkle {
+  0%, 100% {
+    opacity: 0.14;
+  }
+  50% {
+    opacity: 0.30;
+  }
+}
+
+
+/* ---------- FOOTER FINISH ---------- */
+
+.footer-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin: 12px 0 7px;
+
+  color: #d9a441;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.footer-divider span {
+  color: #c8b6a1;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+}
+
+.footer-message {
+  margin: 0 0 13px !important;
+  color: #8f7c69 !important;
+  font-size: 11px !important;
+  line-height: 1.7;
+}
+
+.footer-symbol {
+  box-shadow:
+    0 0 22px rgba(217, 164, 65, 0.12),
+    inset 0 0 12px rgba(217, 164, 65, 0.04);
+}
+
+
+/* ---------- MOBILE SAFE ---------- */
+
+@media (max-width: 700px) {
+  .nav-links a.active::after {
+    left: 15px;
+    bottom: 7px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    transform: none;
+  }
+
+  .puja-float,
+  .puja-float-four,
+  .puja-float-five {
+    display: none;
+  }
+
+  .loading-screen h1 {
+    font-size: 26px;
+  }
+
+  .reveal-section {
+    transform: translateY(18px);
+    transition-duration: 0.7s;
+  }
+}
+
+
+/* ---------- ACCESSIBILITY ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal-section {
+    opacity: 1;
+    transform: none;
+  }
+}
